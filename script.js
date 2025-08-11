@@ -1,49 +1,42 @@
 class Person {
     constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    
-    get getName() {
-        return this.name;
+        this._name = name;
+        this._age = age;
     }
 
-    set setAge(newAge) {
-        this.age = newAge; 
+    get name() {
+        return this._name;
+    }
+
+    get age() {
+        return this._age;
+    }
+
+    set age(newAge) {
+        this._age = newAge;
     }
 }
-
-const person = new Person("John", 30);
-person.setAge = 25; 
-console.log(person.name, person.age); 
 
 class Student extends Person {
     constructor(name, age) {
-        super(name, age); 
+        super(name, age);
     }
     
     study() {
-        console.log(`${this.name} is studying.`);
+        console.log(`${this.name} is studying`);
     }
 }
 
-const student = new Student("Alice", 20);
-student.study(); // Outputs: Alice is studying.
-
-class Teacher extends Person { // Added missing braces
+class Teacher extends Person {
     constructor(name, age) {
         super(name, age);
     }
    
     teach() {
-        console.log(`${this.name} is teaching.`);
+        console.log(`${this.name} is teaching`);
     }
 }
 
-const teacher = new Teacher("Bob", 40);
-teacher.teach(); // Outputs: Bob is teaching.
-
-// Do not change the code below this line
 window.Person = Person;
 window.Student = Student;
 window.Teacher = Teacher;
