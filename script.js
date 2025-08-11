@@ -9,17 +9,17 @@ class Person {
     }
 
     set setAge(newAge) {
-        this.age = newAge; // Correctly set the new age
+        this.age = newAge; 
     }
 }
 
 const person = new Person("John", 30);
-person.setAge = 25; // Using the setter to change the age
-console.log(person.name, person.age); // Outputs: John 25
+person.setAge = 25; 
+console.log(person.name, person.age); 
 
 class Student extends Person {
     constructor(name, age) {
-        super(name, age); // Call the parent constructor
+        super(name, age); 
     }
     
     study() {
